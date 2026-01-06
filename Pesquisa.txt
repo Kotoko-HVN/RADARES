@@ -33,10 +33,14 @@ mas por hora, classified lmao.
                       (Adicionados conforme nescessario)
 
 EM - Eletromagnético/a
+ECM - Eletronics countermeassure system
+EMI - Interfêrencia eletromagnética
 RF - Radiofrequência
 
                                   TRADUÇÕES
                       (Adicionadas conforme nescessario)
+
+Analog-to-Digital converter (ADC) - conversor analógico para digital
 
 Clutter - Interferência do ambiente na detecção do radar 
 (núvems, montanhas, solo, etc).
@@ -51,7 +55,7 @@ Capítulos?
 1 - Radares
   1.1 - Introdução
   1.2 - Conceito de Radar
-
+  1.3 - Física de ondas
 ====================================================================================
 Cap 1.1 - Introdução
 
@@ -72,35 +76,53 @@ Cap 1.2 - Conceito de Radar
   O radar é um sistema eletrônico que transmite radiofrequência (RF) eletromagnética
 (EM) em direção a uma região de interesse, recebe e detecta essas ondas eletromagnéticas
 quando essas são refletidas por objetos dentro da região.
-  Subsistemas de radar podem variar, porém a maioria contém:
+  Subsistemas de radar podem variar, porém todos contém:
 
    - Transmissor - Subsistema que gera as ondas EM
    - Antena - Subsistema que propaga as ondas EM, geralmente na atmosfera
    - Receptor - Subsistema que recebe o retorno das ondas EM
-   - Processador de sinais - Processa as informações recebidas em dados úteis
-   - T/R device*: conecta o transmissor e a 
-     antena, tem a função de ser um ponto de conexão para 
+   - Processador de sinais - Processa as informações recebidas em dados úteis,
+     identificar um alvo apesar do clutter e ECMs é o principal trabalho do mesmo.
+  
+
+A antena recebe as ondas EM que são refletidas de um objeto. O objeto pode ser
+um alvo de interesse ou não-interesse, como clutter. Uma porção do sinal
+refletido é "capturado" pela antena e enviado para o para o receptor, onde este
+vai amplificar o sinal, converter o sinal RF para uma frequencia intermediaria (IF)
+e subsequentemente aplicar o sinal em um ADC (analog-to-digital converter) e então
+envia para o processador de sinais.
+  A distãncia, R, até um alvo detectado pode ser baseada no tempo (ΔT) que leva para
+as ondas EM se propagaram do radar até o alvo e voltarem na velocidade da luz. 
+  Como distância é velocidade multiplicada por tempo, e a distância que as ondas EM 
+viajam é de 2R, 
+                                    
+                                    R = CΔT / 2
+
+                          C é a velocidade da luz em m/s
+                          ΔT é o tempo de ida e volta
+                          R é a distância do alvo em metros
+
+Os sinais recebidos também podem sofrer interferência, como:
+  - Ruídos internos e externos da eletrônica
+  - Ondas EM refletidas por objetos de não-interesse (Clutter)
+  - Ondas EM criadas não intencionalmente por outros objetos na area (EMI)
+  - Jamming intencional criado por ECMs, na forma de ruídos ou falsos alvos
+
+====================================================================================
+Cap 1.3 - Física de ondas
+
+  Ondas eletromagnéticas são ondas do campo elétrico e magnético que oscilam na 
+frequência da portadora. O campo elétrico, E, está em um plano, e o campo 
+magnético, B, é ortogonal ao campo E. A direção da propagação dessa onda EM pelo espaço 
+é ortogonal ao plano descrito pelos campos E e B.
 
 
-
-
-Basicamente, o Transmissor gera as ondas EM, a Antena joga essas ondas na atmosfera,
-que batem nos objetos que estiverem na região onde as ondas foram lançadas e retornam
-para o Receptor, que 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        
+│
+│
+│
+│
+│
 
 
 
