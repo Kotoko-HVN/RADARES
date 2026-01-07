@@ -15,19 +15,24 @@
 ** AVISO **
 Esse primeiro TXT de pesquisa basicamente vai servir como um "Log" de aprendizado,
 com resumos, pensamentos, ideias etc etc.
+
 Basicamente, um "caderno" virtual.
 Vai ser também escrito em capítulos conforme o que leio, até por que se uma hora
 eu for realmente desenvolver algo, vai ser útil ter esse "caderno" em ordem.
 
-outra coisa, haverão termos em ingles que TALVEZ eu vá traduzir em algum lugar
+Haverão termos em ingles que TALVEZ eu vá traduzir em algum lugar
 específico para traduções de termos, talvez até no acronimo, isso é mais pra se
 algum outro gato pingado for ler isso, até por que meu ingles ta em dia e eu já 
 sei bastante do conteúdo.
 
-sobre as fontes dessa pesquisa, se for interessante, quem sabe eu cite, 
+Como não pode por imagem nisso aqui, vai ter coisa em ASCII, onde as linhas
+provavelmente nem sempre vai ficar alinhadas, principalmente verticais, então 
+considerem elas retas e alinhas ok?
+
+Sobre as fontes dessa pesquisa, se for interessante, quem sabe eu cite, 
 mas por hora, classified lmao.
 
-═══════════════════════════════════════════════════════════════════════════════════
+╔═══════════════════════════════════════════════════════════════════════════════════╗
 
                                   ACRONIMOS
                       (Adicionados conforme nescessario)
@@ -49,13 +54,19 @@ Countermeassures - Contramedidas, sistemas de embaralhamento contra radares,
 fornecem alvos falsos ao radar para confundir do alvo verdadeiro.
 
 
-═══════════════════════════════════════════════════════════════════════════════════
+╔═══════════════════════════════════════════════════════════════════════════════════╗
 
 Capítulos?
 1 - Radares
   1.1 - Introdução.
   1.2 - Conceito de Radar.
   1.3 - Física de ondas.
+    1.3.1.1 - Tamanho de onda
+    1.3.1.2 - Frequência
+    1.3.1.3 - Fase
+    1.3.1.4 - Interferência
+    
+
 ═══════════════════════════════════════════════════════════════════════════════════
 Cap 1.1 - Introdução
 
@@ -66,7 +77,7 @@ detection and ranging" (Detecção e distanciometria por radio).
 a detecção e distanciometria dos alvos, mas sim rastreiam, identificam, e 
 classifícam os mesmos enquanto supressam sistemas de embaralhamento (Countermeassures)
 e ecos do ambiente, conhecidos como Clutter*.
-  Radares modernos empregam destas técnologias para inumeras atividades, expandido do
+  Radares modernos empregam destas técnologias para inúmeras atividades, expandido do
 uso militar e civil de detecção e rastreio de aeronaves para mapeamento em duas e três
 dimensões, sistemas anti colisão e muitos outros.
   
@@ -112,20 +123,20 @@ Cap 1.3 - Física de ondas
 
   Ondas eletromagnéticas são ondas do campo elétrico e magnético que oscilam na 
 frequência da portadora. O campo elétrico, E, está em um plano, e o campo 
-magnético, B, é ortogonal ao campo E. A direção da propagação dessa onda EM pelo espaço 
-é ortogonal ao plano descrito pelos campos E e B.        
-                                                               
-                                  E                         
-                                  │                 VELOCIDADE   
-                                  │                    ╱
-                                  │                 ╱
-                                Y │           Z  ╱
-                                  │           ╱
-                                  │        ╱
-                                  │     ╱
-                                  │  ╱
-                                    ╴╴╴╴╴╴╴╴╴╴╴╴╴╴B
-                                                X
+magnético, B, é ortogonal ao campo E. A direção da propagação dessa onda EM 
+pelo espaço é ortogonal ao plano descrito pelos campos E e B.        
+                          
+                                 E                                
+                                 │                 VELOCIDADE    
+                                 │                    ╱         
+                                 │                 ╱
+                               Y │           Z  ╱
+                                 │           ╱
+                                 │        ╱
+                                 │     ╱
+                                 │  ╱
+                                   ╴╴╴╴╴╴╴╴╴╴╴╴╴╴B    
+                                                X                
 
 A amplitude dos componentes X ou Y do campo elétrico de uma onda EM que se propaga ao
 longo do eixo Z  pode ser representada matemáticamente como 
@@ -133,20 +144,70 @@ longo do eixo Z  pode ser representada matemáticamente como
                                     E = E₀ cos(kz − ωt + φ)  
 
 onde E₀ é o pico de aplitude e φ a posição inicial.
-  O numero da onda (K) e a frequencia angular (ω) são relacionados por
+  O número da onda (K) e a frequencia angular (ω) são relacionados por
 
                       k = 2π / λ  (rad/m)             ω = 2π f  (rad/s)
 
 onde λ é o comprimento da onda em metros e f a frequência em hertz da portadora.
 
+═══════════════════════════════════════════════════════════════════════════════════
+Cap 1.3.1.1 - Tamanho de onda
 
+  Enquanto a onda EM se propaga pelo espaço, a amplitude E para uma onda linear 
+polarizada, medida em um único ponto no tempo, traçaria uma senoide, como demonstrado
+abaixo:
 
+ ╱╲
+  ┃
+  ┃                             Tamanho de onda (λ) 
+A ┃           ┝━━━━━━━━━━━━━━━━━━━━━━━━━━━┫
+M ┃          ╱╲                                                ╱╲
+P ┃       ╱      ╲                                          ╱      ╲
+L ┃    ╱            ╲                                    ╱            ╲
+I ┃ ╱                  ╲                              ╱                  ╲
+T ┝━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━>
+U ┃                          ╲                  ╱
+D ┃                             ╲            ╱
+E ┃                                ╲      ╱  
+  ┃                                   ╲╱
+  ┃
 
+  Isso corresponde a manter a constante T fixa e deixar z variar. O tamando de onda,
+λ, é a distância de um ponto da senoide até outro ponto correspondente, 
+por exemplo, do topo ao topo.
 
+═══════════════════════════════════════════════════════════════════════════════════
+Cap 1.3.1.2 - Frequência
 
+  Porém, se fixasse-mos um ponto no espaço e a amplitude de E fosse observada como
+a função de tempo naquele local, o resultado seria a senoide como demonstrada abaixo:
 
+ ╱╲
+  ┃                                            Período (T₀) 
+A ┃                       ┝━━━━━━━━━━━━━━━━━━━━━━━━━━━┫
+M ┃          ╱╲          ┃                                    ╱╲         ┃
+P ┃       ╱      ╲       ┃                                 ╱      ╲      ┃
+L ┃    ╱            ╲    ┃                              ╱            ╲   ┃
+I ┃ ╱                  ╲ ┃                           ╱                  ╲┃     
+T ┝━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━>
+U ┃                           ╲                  ╱
+D ┃                              ╲            ╱
+E ┃                                 ╲      ╱  
+  ┃                                    ╲╱
+  ┃
+                                      
+  Isso corresponde a manter a consante z fixa e deixar T variar. O período da onda, 
+T₀, é o tempo de um ponto da senoide até outro ponto correspondente, como do topo
+ao topo. Isto é, o período que leva para a onda EM passar por um ciclo completo.
+  Se o período é expresso em segundos, então o inverso do período são o número de
+ciclos que a onda passou em 1 segundo. Essa quantidade é a Frequência da onda.
 
+                                        F = 1/T₀
 
+                                        F = Frêquencia
+                                        T₀ = Período de tempo
+
+  A frequência é expressa em Hertz (Hz), 1Hz é equivalente a um ciclo por segundo.
 
 
 
